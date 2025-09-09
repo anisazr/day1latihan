@@ -1,9 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\produkController;
+use App\Http\Controllers\ProdukController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('produks',produkController::class); //ini nama database nya yang sesuai
+Route::get('/acha', function () {
+    return view('achacantik');
+});
+
+// resource route -> pastikan nama controller sama dengan file aslinya
+Route::resource('produks', ProdukController::class);
+
